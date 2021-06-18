@@ -13,5 +13,6 @@ cleanup:
 	rm -rf deb_dist dist
 	rm -rf python-vmguestlib-*.tar.gz
 	rm -rf *.egg-info
-build: build-container generate-deb upload-deb
+
+build: build-container generate-deb upload-deb cleanup
 

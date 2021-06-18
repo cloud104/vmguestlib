@@ -2,6 +2,7 @@ VMGuestLib python wrapper
 =========================
 Python API for interacting with VMware's VMGuestLib SDK.
 
+**THIS IS A MODIFIED VERSION TO SUPPORT PYTHON 3**
 
 Installation
 ------------
@@ -16,43 +17,28 @@ Quick Example
 -------------
 
 ```python
-#!/usr/bin/python
+#!/usr/bin/python3
 
 from vmguestlib import VMGuestLib
 
 gl = VMGuestLib()
 gl.update_info()
 
-print
-'CPU'
-print
-'  Stolen: %dms' % gl.get_cpu_stolen_ms()
-print
-'  Used: %dms' % gl.get_cpu_used_ms()
-print
-'  Elapsed: %dms' % gl.get_elapsed_ms()
-print
-
-print
-'Memory'
-print
-'  Active: %d MB' % gl.get_mem_active_mb()
-print
-'  Ballooned: %d MB' % gl.get_mem_ballooned_mb()
-print
-'  Mapped: %d MB' % gl.get_mem_mapped_mb()
-print
-'  Overhead: %d MB' % gl.GetMemOverheadMB()
-print
-'  Shared: %d MB' % gl.get_mem_shared_mb()
-print
-'  Shared saved: %d MB' % gl.get_mem_shared_saved_mb()
-print
-'  Swapped: %d MB' % gl.get_mem_swapped_mb()
-print
-'  Used: %d MB' % gl.get_mem_used_mb()
-print
-
+print('CPU')
+print('  Stolen: %dms' % gl.get_cpu_stolen_ms())
+print('  Used: %dms' % gl.get_cpu_used_ms())
+print('  Elapsed: %dms' % gl.get_elapsed_ms())
+print("")
+print('Memory')
+print('  Active: %d MB' % gl.get_mem_active_mb())
+print('  Ballooned: %d MB' % gl.get_mem_ballooned_mb())
+print('  Mapped: %d MB' % gl.get_mem_mapped_mb())
+print('  Overhead: %d MB' % gl.GetMemOverheadMB())
+print('  Shared: %d MB' % gl.get_mem_shared_mb())
+print('  Shared saved: %d MB' % gl.get_mem_shared_saved_mb())
+print('  Swapped: %d MB' % gl.get_mem_swapped_mb())
+print('  Used: %d MB' % gl.get_mem_used_mb())
+print("")
 gl.close_handle()
 ```
 
@@ -122,18 +108,14 @@ http://github.com/dagwieers/vmguestlib
 
 Packaging guidelines
 --------------------
-Please package this software using the name "python-vmguestlib" on all platforms,
-and include the vmguest-stats utility as-is.
+Run the command:
 
-With python comes a packaging tool: setuptools.
-https://pypi.python.org/pypi/setuptools
-Example for rpm:
-```
-git clone https://github.com/dagwieers/vmguestlib.git
-cd vmguestlib
-python setup.py bdist_rpm
-```
+`make build`
 
+- This will create a container locally with all dependencies;
+- Start this container with code;
+- Create the deb package;
+- Upload it to a google storage
 
 Author and license
 ------------------
