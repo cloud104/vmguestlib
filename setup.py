@@ -2,27 +2,26 @@
 
 try:
     from setuptools import setup
-except:
+except ImportError:
     from distutils.core import setup
 
-VERSION = (0, 1, 2)
+VERSION = (0, 2, 0)
 
 if __name__ == '__main__':
-
     setup(
-        name = 'python-vmguestlib',
-        version = '0.1.2',
+        name='python-vmguestlib',
+        version='0.2.0',
         author='Dag Wieers',
         author_email='dag@wieers.com',
         url='http://github.com/dagwieers/vmguestlib',
         download_url='http://github.com/dagwieers/vmguestlib/archive/0.1.2.tar.gz',
         description='Python API for interacting with VMware\'s VMGuestLib SDK',
-        license = 'GPLv2',
+        license='GPLv2',
         install_requires=[],
-        py_modules = ['vmguestlib', ],
-        scripts=[ 'vmguest-stats', ],
-        keywords = ['Virtual', 'vmware', 'ESX', 'ESXi', 'VMGuestLib', 'SDK', 'API'],
-        classifiers = [
+        py_modules=['vmguestlib'],
+        scripts=['vmguest-stats'],
+        keywords=['Virtual', 'vmware', 'ESX', 'ESXi', 'VMGuestLib', 'SDK', 'API'],
+        classifiers=[
             'Programming Language :: Python',
             'Programming Language :: Python :: 2.5',
             'Programming Language :: Python :: 2.6',
@@ -46,8 +45,9 @@ if __name__ == '__main__':
             'Topic :: Utilities'
         ],
         long_description='''Python API for interacting with VMware\'s VMGuestLib SDK
-This software is (c) 2013-2014 Dag Wieers dag@wieers.com
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later version.''',
+This software is (c) 2013-2014 Dag Wieers dag@wieers.com This program is free software: you can redistribute it 
+and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, 
+either version 2 of the License, or (at your option) any later version.''',
     )
 
 # vim:ts=4:sw=4:et
